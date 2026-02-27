@@ -3,7 +3,7 @@ import os
 
 #Configuration
 model="jerry"
-input_file=".dataset/grocery_list.txt"
+input_file = ".dataset/grocery_list.txt"
 output_file=".dataset/aftereffectgrocery_list.txt"
 
 #Check if it exist or not 
@@ -34,9 +34,14 @@ try:
         prompt=prompt,
     )
     txt=response.get("resposne","")
+
 #Output file 
     with open(output_file,"w") as f:
         f.write(txt.strip())
+
+    print(f"categorizered'{output_file}'.")
+except Exception as e:
+    print(f"An error occured",str(e))
 
 
 
